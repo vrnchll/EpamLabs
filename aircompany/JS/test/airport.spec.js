@@ -30,6 +30,7 @@ describe('My Test', () => {
         new experimentalPlane("Ryan X-13 Vertijet", 560, 307, 500, ExperimentalTypes.VTOL, ClassificationLevel.TOP_SECRET)
     ];
     let planeWithMaxPassengerCapacity = new PassengerPlane('Boeing-747', 980, 16100, 70500, 242);
+    let airport = new Airport(planes);
 
     it('should have military Planes with transport type', () => {
         
@@ -72,7 +73,7 @@ describe('My Test', () => {
 
     it('should check that experimentsl planes has classification level higher than unclassified', () => {
         let experimentalPlanes = airport.getExperimentalPlanes();
-        assert.isTrue(experimentalPlanes.filter(airplane => airplane.getClassificationLevel() === ClassificationLevel.UNCLASSIFIED).length === 0);
+        assert.isTrue(experimentalPlanes.filter(airplane => airplane.GetClassificationLevel() === ClassificationLevel.UNCLASSIFIED).length === 0);
     });
 
 });

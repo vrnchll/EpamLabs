@@ -23,15 +23,15 @@ class Airport {
     }
 
     getPassengerPlaneWithMaxPassengersCapacity() {
-        let passengerPlanes = this.getPassengerPlane();
+        let passengerPlanes = this.getPasssengerPlane();
         let planeWithMaxCapacity = passengerPlanes[0];
-        passengerPlanes.forEach(plane => passengerPlanes[i].getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity() ? planeWithMaxCapacity = passengerPlanes[i]:null)
+        passengerPlanes.forEach(plane => plane.getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity() ? planeWithMaxCapacity = plane:null)
         return planeWithMaxCapacity;
     }
     getTransportMilitaryPlanes(){
         let transportMilitaryPlanes = [];
         let militaryPlanes = this.getMilitaryPlanes();
-        militaryPlanes.forEach(plane=>militaryPlanes[i].getMilitaryType() == MilitaryType.TYPE_TRANSPORT?transportMilitaryPlanes.push(militaryPlanes[i]):null)
+        militaryPlanes.forEach(plane=>plane.getMilitaryType() == MilitaryType.TYPE_TRANSPORT?transportMilitaryPlanes.push(plane):null)
         return transportMilitaryPlanes;
     }
 
@@ -40,7 +40,7 @@ class Airport {
     {
         let bomberMilitaryPlanes = [];
         let militaryPlanes = this.getMilitaryPlanes();
-        militaryPlanes.forEach(plane=>militaryPlanes[i].getMilitaryType()=== MilitaryType.BOMBER?bomberMilitaryPlanes.push(militaryPlanes[i]):null);
+        militaryPlanes.forEach(plane=>plane.getMilitaryType()=== MilitaryType.BOMBER?bomberMilitaryPlanes.push(plane):null);
         return bomberMilitaryPlanes;
     }
 
