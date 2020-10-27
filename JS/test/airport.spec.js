@@ -73,7 +73,7 @@ describe('My Test', () => {
 
     it('should check that experimentsl planes has classification level higher than unclassified', () => {
         let experimentalPlanes = airport.getExperimentalPlanes();
-        assert.isTrue(experimentalPlanes.filter(airplane => airplane.GetClassificationLevel() === ClassificationLevel.UNCLASSIFIED).length === 0);
+        assert.isTrue(experimentalPlanes.filter(airplane => airplane.getClassificationLevel() === ClassificationLevel.UNCLASSIFIED).length === 0);
     });
 
 });

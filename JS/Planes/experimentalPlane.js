@@ -7,10 +7,10 @@ class experimentalPlane   extends Plane
         this._type = type;
         this._classificationLevel = classificationLevel;
     }
-    get type() {
+    getType() {
         return this._type;
     }
-    GetClassificationLevel() {
+    getClassificationLevel() {
         return this._classificationLevel;
     }
 }

@@ -8,7 +8,15 @@ const FALSE_CONDITION = -1;
 
 class Airport {
 
-     getPasssengerPlane() {
+    constructor(planes) {
+        this.planes = planes;
+    }
+
+    getPlanes() {
+        return this.planes;
+    }
+
+    getPasssengerPlane() {
         var PassengerPlaneArray = [];
         this.planes.forEach(plane=>{
             plane instanceof PassengerPlane?PassengerPlaneArray.push(plane):null;
@@ -44,11 +52,6 @@ class Airport {
         return bomberMilitaryPlanes;
     }
 
-    constructor(planes) {
-        this.planes = planes;
-    }
-
-
     getExperimentalPlanes() {
         let experimentalPlanes  = [];
         this.planes.forEach(plane => plane instanceof experimentalPlane?experimentalPlanes.push(plane):null);
@@ -56,22 +59,15 @@ class Airport {
     }
 
     sortByMaxDistance() {
-        this.planes.sort((a, b) => (a.getMaxFlightDistance() > b.getMaxFlightDistance()) ? TRUE_CONDITION : FALSE_CONDITION);
-        return this;
+        return this.planes.sort((firstPlane, secondPlane) => (firstPlane.getMaxFlightDistance() > secondPlane.getMaxFlightDistance()) ? TRUE_CONDITION : FALSE_CONDITION);
     }
 
     sortByMaxSpeed() {
-        this.planes.sort((a, b) => (a.getMaxSpeed() > b.getMaxSpeed()) ? TRUE_CONDITION : FALSE_CONDITION);
-        return this;
+        return this.planes.sort((firstPlane, secondPlane) => (firstPlane.getMaxSpeed() > secondPlane.getMaxSpeed()) ? TRUE_CONDITION : FALSE_CONDITION);
     }
 
     sortByMaxLoadCapacity() {
-        this.planes.sort((a, b) => (a.getMinLoadCapacity() > b.getMinLoadCapacity()) ? TRUE_CONDITION : FALSE_CONDITION);
-        return this;
-    }
-
-    getPlanes() {
-        return this.planes;
+        return this.planes.sort((firstPlane, secondPlane) => (firstPlane.getMinLoadCapacity() > secondPlane.getMinLoadCapacity()) ? TRUE_CONDITION : FALSE_CONDITION);
     }
 
     static print(planes) {
