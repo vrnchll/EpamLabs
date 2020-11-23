@@ -22,7 +22,8 @@ it('should change value from 650 to 5 due to filtering by size in block "650 Ð¢Ð
   const buttFilter = driver.findElement(By.className('sc-gqjmRU bXRaMh'));
   await buttFilter.click();
  
-  
+  driver.wait(until.elementLocated(By.css('#esProductQuantity > span')))
+
   driver.findElement(By.css('#esProductQuantity > span')).getText().then(value => {
     assert.strictEqual(value, '5');
   })
